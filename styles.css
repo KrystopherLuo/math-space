@@ -77,7 +77,7 @@ nav ul li a:hover {
     background-color: transparent;
 }
 
-#presentation {
+.presentation {
     margin: 5% auto 0;
 
     height: auto;
@@ -90,11 +90,11 @@ nav ul li a:hover {
     align-items: flex-start;
 }
 
-#presentation img {
+.presentation img {
     width: 50%;
 }
 
-#presentation-box {
+.presentation-box {
     background-color: gray;
     padding: 2% 4%;
 
@@ -109,32 +109,104 @@ nav ul li a:hover {
     border-radius: 12px;
 }
 
-#presentation-box h3 {
+.presentation-box h3 {
     text-align: center;
 }
 
-#presentation-box h3, #presentation-box p {
+.presentation-box h3, .presentation-box p {
     background-color: transparent;
 }
 
 .topic {
-    
-}
-
-.topic img {
     height: 175px;
     width: 300px;
 
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.topic:hover h4 {
+    color: transparent;
+}
+
+.topic:hover p {
+    animation: aparecer 0.3s ease-in-out forwards;
+}
+
+.topic:hover img {
+    transform: translateY(-10px);
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+}
+
+.topic img {
+    height: 100%;
+    width: 100%;
+
+
     border-radius: 12px;
+    z-index: 1;
+
+    transition: transform 0.3s ease-in-out;
+}
+
+.topic h4 {
+    position: absolute;
+
+    z-index: 2;
+
+    background-color: transparent;
+
+    transition: color 0.3s ease-in-out;
+}
+
+.topic p {
+    position: absolute;
+    z-index: 2;
+    background-color: transparent;
+
+    opacity: 0;
+
+    transition: all 0.3s ease-in-out;
 }
 
 #topic-grid-title {
     text-align: center;
+    margin-top: 30px;
     margin-bottom: 20px;
+
+    top: 10px;
 }
 
 #topic-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+
+    row-gap: 90px;
+}
+
+@media (max-width: 600px) {
+    #topic-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+#text-label {
+    width: 100%;
+    
 }
