@@ -336,7 +336,7 @@ nav ul li a:hover {
 }
 
 .content {
-    width: 100vw;
+    width: 100%;
     padding-inline: 5%;
     margin-top: 90px;
 }
@@ -354,5 +354,7 @@ nav ul li a:hover {
 }
 
 .content img {
+    display: block;
     max-width: 100%;
+    height: auto;
 }
