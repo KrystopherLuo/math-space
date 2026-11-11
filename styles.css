@@ -352,3 +352,7 @@ nav ul li a:hover {
 .content p {
     margin-top: 10px;
 }
+
+.content img {
+    max-width: 100%;
+}
